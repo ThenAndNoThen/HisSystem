@@ -1,0 +1,46 @@
+package presenter;
+
+import dto.BillDTO;
+import dto.UnitPriceDTO;
+import model.MainModel;
+import model.ModelFactory;
+import view.MainView;
+
+public class MainPresenter implements MainPresenterCallBack {
+	MainView mainView;
+	MainModel mainModel;
+	
+	public MainPresenter(MainView mainView) {
+		this.mainView = mainView;
+		this.mainModel = ModelFactory.createMainModel();
+		mainModel.setDataCallBack(this);
+	}
+
+	public void getUnitPrice(String unitName) {
+		mainModel.getUnitPrice(unitName);
+	}
+	
+	public void saveBillInfo(BillDTO bill) {
+		mainModel.saveBillInfo(bill);
+	}
+
+	@Override
+	public void messageFailed(String failInfo) {
+		// TODO Auto-generated method stub
+		
+	}
+
+
+	@Override
+	public void unitPriceRecived(UnitPriceDTO unitPrice) {
+		// TODO Auto-generated method stub
+		mainView.updateUnitPrice(unitPrice);
+		
+	}
+
+	@Override
+	public void messageSuccessed(String successInfo) {
+		// TODO Auto-generated method stub
+		
+	}
+}

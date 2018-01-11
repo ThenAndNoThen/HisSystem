@@ -1,0 +1,7 @@
+package model;
+
+public class ModelFactory {
+	public static MainModel createMainModel() {
+		return null;
+	}
+}

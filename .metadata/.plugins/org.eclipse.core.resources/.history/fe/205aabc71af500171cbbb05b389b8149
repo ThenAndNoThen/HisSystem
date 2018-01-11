@@ -1,0 +1,11 @@
+package model;
+
+import bean.Bill;
+import presenter.DataReceivedCallBack;
+
+public interface MainModel {
+	void setDataCallBack(DataReceivedCallBack dataReceivedCallBack);//设置回调
+	void getUnitPrice(String unitName);//获取单价信息
+	void saveBillInfo(Bill bill);//保存单据信息
+	
+}

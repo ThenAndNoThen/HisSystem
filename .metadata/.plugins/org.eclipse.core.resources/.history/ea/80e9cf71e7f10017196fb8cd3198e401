@@ -1,0 +1,74 @@
+import java.awt.EventQueue;
+import java.awt.FlowLayout;
+
+import javax.swing.JButton;
+import javax.swing.JFrame;
+import javax.swing.JPanel;
+import javax.swing.border.Border;
+
+import java.awt.BorderLayout;
+import java.awt.Dimension;
+
+public class MainWindow {
+
+	private JFrame frame;
+	private JPanel topBtnPanel;//顶部4个按钮面板
+	private JPanel patientInfoPanel;//患者信息面板
+	private JPanel billBtnPanel;//单据新增/删除面板
+	private JPanel billDetailPanel;//单据明细信息面板
+	private JButton addButton,saveButton,cancelButton,exitButton;
+	/**
+	 * Launch the application.
+	 */
+	public static void main(String[] args) {
+		EventQueue.invokeLater(new Runnable() {
+			public void run() {
+				try {
+					MainWindow window = new MainWindow();
+					window.frame.setVisible(true);
+				} catch (Exception e) {
+					e.printStackTrace();
+				}
+			}
+		});
+	}
+
+	/**
+	 * Create the application.
+	 */
+	public MainWindow() {
+		initialize();
+	}
+
+	/**
+	 * Initialize the contents of the frame.
+	 */
+	private void initialize() {
+		frame = new JFrame();
+		frame.setSize(800, 600);
+		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+		frame.setResizable(false);
+		frame.setLocationRelativeTo(null);
+		
+		topBtnPanel = new JPanel();
+		addButton = new JButton("增加");
+		saveButton = new JButton("保存");
+		cancelButton = new JButton("取消");
+		exitButton = new JButton("退出");
+		topBtnPanel.setLayout(new FlowLayout(FlowLayout.LEFT));
+		topBtnPanel.setPreferredSize(new Dimension(400,100));
+		addButton.setPreferredSize(new Dimension(90,90));
+		topBtnPanel.add(addButton);
+		topBtnPanel.add(saveButton);
+		topBtnPanel.add(cancelButton);
+		topBtnPanel.add(exitButton);
+		
+		patientInfoPanel = new JPanel();
+//		patientInfoPanel.setBorder(JPanel.);
+		
+		frame.getContentPane().add(topBtnPanel, BorderLayout.NORTH);
+
+		
+	}
+
+}

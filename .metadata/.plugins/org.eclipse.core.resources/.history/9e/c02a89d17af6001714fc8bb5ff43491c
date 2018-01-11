@@ -1,0 +1,18 @@
+package presenter;
+
+public interface DataReceivedCallBack {
+	
+	/**
+	 * 单价信息回调
+	 * @param unitPrice 单价信息
+	 * @param unitName 商品名称
+	 */
+	void unitPriceRecived(double unitPrice,String unitName);
+	
+	/**
+	 * 服务器通信失败回调
+	 * @param failInfo 通信失败提示信息
+	 */
+	void messageFailed(String failInfo);//
+	
+}

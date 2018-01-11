@@ -1,0 +1,165 @@
+import java.awt.EventQueue;
+import java.awt.FlowLayout;
+import java.awt.Font;
+import java.awt.GridLayout;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
+
+import javax.swing.BorderFactory;
+import javax.swing.JButton;
+import javax.swing.JFrame;
+import javax.swing.JLabel;
+import javax.swing.JPanel;
+import javax.swing.JTextField;
+import javax.swing.border.Border;
+import javax.swing.border.EtchedBorder;
+
+import java.awt.BorderLayout;
+import java.awt.Color;
+import java.awt.Container;
+import java.awt.Dimension;
+
+public class MainWindow implements ActionListener {
+
+	private JFrame frame;
+	private JPanel topBtnPanel;//顶部4个按钮面板
+	private JPanel patientInfoPanel;//患者信息面板
+	private JPanel billBtnPanel;//单据新增/删除面板
+	
+	private JPanel panel1,panel2;
+	
+	private JButton addButton,saveButton,cancelButton,exitButton;//顶部4按钮
+	private JTextField patNameJTextField,patGenderJTextField,DoctorJTextField,departmentJTextField;//患者信息4个文本输入框
+	private JButton billAddButton,billDeleteButton;//单据新增/删除按钮
+	
+	private Dimension topButtonDimension = new Dimension(90,90);
+	private Font topButtonFont = new Font(null, Font.BOLD, 16);
+	/**
+	 * Launch the application.
+	 */
+	public static void main(String[] args) {
+		EventQueue.invokeLater(new Runnable() {
+			public void run() {
+				try {
+					MainWindow window = new MainWindow();
+					window.frame.setVisible(true);
+				} catch (Exception e) {
+					e.printStackTrace();
+				}
+			}
+		});
+	}
+
+	/**
+	 * Create the application.
+	 */
+	public MainWindow() {
+		initialize();
+	}
+
+	/**
+	 * Initialize the contents of the frame.
+	 */
+	private void initialize() {	
+		//初始化控件
+		this.frame = new JFrame();
+		frame.setSize(800, 600);
+		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+		frame.setResizable(false);
+		frame.setLocationRelativeTo(null);
+		
+		this.topBtnPanel = new JPanel();
+		this.addButton = new JButton("增加");
+		this.saveButton = new JButton("保存");
+		this.cancelButton = new JButton("取消");
+		this.exitButton = new JButton("退出");
+		topBtnPanel.setPreferredSize(new Dimension(frame.getWidth()-50,110));
+		topBtnPanel.setBorder(BorderFactory.createLineBorder(Color.lightGray));
+		addButton.setPreferredSize(topButtonDimension);
+		addButton.setFont(topButtonFont);
+		saveButton.setPreferredSize(topButtonDimension);
+		saveButton.setFont(topButtonFont);
+		cancelButton.setPreferredSize(topButtonDimension);
+		cancelButton.setFont(topButtonFont);
+		exitButton.setPreferredSize(topButtonDimension);
+		exitButton.setFont(topButtonFont);
+		
+		this.patientInfoPanel = new JPanel();
+		this.patNameJTextField = new JTextField();
+		this.patGenderJTextField = new JTextField();
+		this.departmentJTextField = new JTextField();
+		this.DoctorJTextField = new JTextField();
+		patientInfoPanel.setBorder(BorderFactory.createTitledBorder("患者信息"));
+		patientInfoPanel.setPreferredSize(new Dimension(0,100));
+		JPanel tmpJpanel = new JPanel();
+		tmpJpanel.setPreferredSize(new Dimension(frame.getWidth()-20,40));
+		
+		this.billBtnPanel = new JPanel();
+		this.billAddButton = new JButton("单据新增");
+		this.billDeleteButton = new JButton("单据删除");
+		
+		this.panel1 = new JPanel();
+		this.panel2 = new JPanel();
+		
+		//控件布局关系
+		topBtnPanel.setLayout(new FlowLayout(FlowLayout.LEFT));
+		topBtnPanel.add(addButton);
+		topBtnPanel.add(saveButton);
+		topBtnPanel.add(cancelButton);
+		topBtnPanel.add(exitButton);
+		
+		tmpJpanel.setLayout(new GridLayout(2,4));
+		tmpJpanel.add(new JLabel("患者姓名*"));
+		tmpJpanel.add(new JLabel("性别*"));
+		tmpJpanel.add(new JLabel("门诊科室@*"));
+		tmpJpanel.add(new JLabel("门诊医生@*"));
+		tmpJpanel.add(patNameJTextField);
+		tmpJpanel.add(patGenderJTextField);
+		tmpJpanel.add(departmentJTextField);
+		tmpJpanel.add(DoctorJTextField);
+		patientInfoPanel.setLayout(new FlowLayout());
+		patientInfoPanel.add(tmpJpanel);	
+		
+		billBtnPanel.setLayout(new FlowLayout(FlowLayout.LEFT));
+		billBtnPanel.add(billAddButton);
+		billBtnPanel.add(billDeleteButton);
+				
+		panel2.setLayout(new BorderLayout() );
+		panel2.add(billBtnPanel,BorderLayout.NORTH);	
+		panel1.setLayout(new BorderLayout());
+		panel1.add(patientInfoPanel,BorderLayout.NORTH);
+		panel1.add(panel2,BorderLayout.CENTER);
+			
+		frame.getContentPane().add(topBtnPanel, BorderLayout.NORTH);
+		frame.getContentPane().add(panel1, BorderLayout.CENTER);
+		
+		//添加控件响应
+		addButton.addActionListener(this);
+		
+		//其他操作
+		setAllChildrenEnable(frame.getContentPane(),false);
+		setAllChildrenEnable(addButton,true);
+	}
+	
+	private void setAllChildrenEnable(Container jp,boolean flag) {
+		if(jp.getComponentCount()==0) {
+			jp.setEnabled(flag);
+			return;
+		}
+		for(int i=0;i<jp.getComponentCount();i++) {
+			setAllChildrenEnable((Container)jp.getComponent(i),flag);
+		}
+		jp.setEnabled(flag);
+	}
+
+	@Override
+	public void actionPerformed(ActionEvent e) {
+		Object source = e.getSource();
+		if(source == this.addButton) {
+			setAllChildrenEnable(patientInfoPanel,true);
+			setAllChildrenEnable(billBtnPanel,true);
+			setAllChildrenEnable(topBtnPanel,true);	
+		}
+	}
+
+}

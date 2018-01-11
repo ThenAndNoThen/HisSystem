@@ -1,0 +1,126 @@
+package dto;
+
+import java.io.Serializable;
+
+public class P_Document implements Serializable {
+//    private Integer documentId;
+//    private String documentCode;
+//    private Integer patientId;
+//    private Integer doctorId;
+    private String doctorName;
+//    private Integer doctorDepartmentId;
+    private String doctorDepartmentName;
+//    private Integer complyId;
+    private String complyName;
+    private Double money;
+//    private Integer companyId;
+
+    public P_Document() {
+    }
+
+
+    public Integer getDocumentId() {
+        return documentId;
+    }
+
+    public void setDocumentId(Integer documentId) {
+        this.documentId = documentId;
+    }
+
+    public String getDocumentCode() {
+        return documentCode;
+    }
+
+    public void setDocumentCode(String documentCode) {
+        this.documentCode = documentCode;
+    }
+
+    public Integer getPatientId() {
+        return patientId;
+    }
+
+    public void setPatientId(Integer patientId) {
+        this.patientId = patientId;
+    }
+
+    public Integer getDoctorId() {
+        return doctorId;
+    }
+
+    public void setDoctorId(Integer doctorId) {
+        this.doctorId = doctorId;
+    }
+
+    public String getDoctorName() {
+        return doctorName;
+    }
+
+    public void setDoctorName(String doctorName) {
+        this.doctorName = doctorName;
+    }
+
+    public Integer getDoctorDepartmentId() {
+        return doctorDepartmentId;
+    }
+
+    public void setDoctorDepartmentId(Integer doctorDepartmentId) {
+        this.doctorDepartmentId = doctorDepartmentId;
+    }
+
+    public String getDoctorDepartmentName() {
+        return doctorDepartmentName;
+    }
+
+    public void setDoctorDepartmentName(String doctorDepartmentName) {
+        this.doctorDepartmentName = doctorDepartmentName;
+    }
+
+    public Integer getComplyId() {
+        return complyId;
+    }
+
+    public void setComplyId(Integer complyId) {
+        this.complyId = complyId;
+    }
+
+    public String getComplyName() {
+        return complyName;
+    }
+
+    public void setComplyName(String complyName) {
+        this.complyName = complyName;
+    }
+
+    public Double getMoney() {
+        return money;
+    }
+
+    public void setMoney(Double money) {
+        this.money = money;
+    }
+
+    public Integer getCompanyId() {
+        return companyId;
+    }
+
+    public void setCompanyId(Integer companyId) {
+        this.companyId = companyId;
+    }
+
+    @Override
+    public String toString() {
+        return "P_Document{" +
+                "documentId=" + documentId +
+                ", documentCode='" + documentCode + '\'' +
+                ", patientId=" + patientId +
+                ", doctorId=" + doctorId +
+                ", doctorName='" + doctorName + '\'' +
+                ", doctorDepartmentId=" + doctorDepartmentId +
+                ", doctorDepartmentName='" + doctorDepartmentName + '\'' +
+                ", complyId=" + complyId +
+                ", complyName='" + complyName + '\'' +
+                ", money=" + money +
+                ", companyId=" + companyId +
+                '}';
+    }
+}

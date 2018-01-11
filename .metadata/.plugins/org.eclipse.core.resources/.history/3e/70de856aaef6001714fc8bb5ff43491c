@@ -1,0 +1,87 @@
+package dto;
+
+import java.io.Serializable;
+
+public class P_Document implements Serializable {
+//    private Integer documentId;
+//    private String documentCode;
+//    private Integer patientId;
+//    private Integer doctorId;
+    private String doctorName;
+//    private Integer doctorDepartmentId;
+    private String doctorDepartmentName;
+//    private Integer complyId;
+    private String complyName;
+    private Double money;
+//    private Integer companyId;
+
+    public P_Document() {
+    }
+
+
+
+    public String getDoctorName() {
+		return doctorName;
+	}
+
+
+
+	public void setDoctorName(String doctorName) {
+		this.doctorName = doctorName;
+	}
+
+
+
+	public String getDoctorDepartmentName() {
+		return doctorDepartmentName;
+	}
+
+
+
+	public void setDoctorDepartmentName(String doctorDepartmentName) {
+		this.doctorDepartmentName = doctorDepartmentName;
+	}
+
+
+
+	public String getComplyName() {
+		return complyName;
+	}
+
+
+
+	public void setComplyName(String complyName) {
+		this.complyName = complyName;
+	}
+
+
+
+	public Double getMoney() {
+		return money;
+	}
+
+
+
+	public void setMoney(Double money) {
+		this.money = money;
+	}
+
+
+
+	@Override
+    public String toString() {
+        return "P_Document{" +
+                "documentId=" + documentId +
+                ", documentCode='" + documentCode + '\'' +
+                ", patientId=" + patientId +
+                ", doctorId=" + doctorId +
+                ", doctorName='" + doctorName + '\'' +
+                ", doctorDepartmentId=" + doctorDepartmentId +
+                ", doctorDepartmentName='" + doctorDepartmentName + '\'' +
+                ", complyId=" + complyId +
+                ", complyName='" + complyName + '\'' +
+                ", money=" + money +
+                ", companyId=" + companyId +
+                '}';
+    }
+}

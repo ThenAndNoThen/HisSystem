@@ -1,0 +1,78 @@
+package dto;
+
+
+
+import java.io.Serializable;
+
+
+public class P_DocumentDetail implements Serializable {
+//    private Integer documentDetailId;
+//    private Integer documentId;
+//    private Integer medicineId;
+//    private Integer storeHouseId;
+    private Double number;
+    private Double price;
+    private Double money;
+//    private Integer companyId;
+    private String departMentName;
+    private String medicineName;
+
+    public P_DocumentDetail() {
+    }
+
+	public Double getNumber() {
+		return number;
+	}
+
+	public void setNumber(Double number) {
+		this.number = number;
+	}
+
+	public Double getPrice() {
+		return price;
+	}
+
+	public void setPrice(Double price) {
+		this.price = price;
+	}
+
+	public Double getMoney() {
+		return money;
+	}
+
+	public void setMoney(Double money) {
+		this.money = money;
+	}
+
+	public String getDepartMentName() {
+		return departMentName;
+	}
+
+	public void setDepartMentName(String departMentName) {
+		this.departMentName = departMentName;
+	}
+
+	public String getMedicineName() {
+		return medicineName;
+	}
+
+	public void setMedicineName(String medicineName) {
+		this.medicineName = medicineName;
+	}
+
+    
+    
+//    @Override
+//    public String toString() {
+//        return "P_DocumentDetail{" +
+//                "documentDetailId=" + documentDetailId +
+//                ", documentId=" + documentId +
+//                ", medicineId=" + medicineId +
+//                ", storeHouseId=" + storeHouseId +
+//                ", number=" + number +
+//                ", price=" + price +
+//                ", money=" + money +
+//                ", companyId=" + companyId +
+//                '}';
+//    }
+}

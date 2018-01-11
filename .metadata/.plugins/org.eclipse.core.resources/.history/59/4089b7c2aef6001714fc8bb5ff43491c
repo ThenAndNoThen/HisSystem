@@ -1,0 +1,108 @@
+package com.sjz.model.entity;
+
+import javax.persistence.*;
+import java.io.Serializable;
+
+@Entity
+@Table(name = "P_DocumentDetail")
+public class P_DocumentDetail implements Serializable {
+    private Integer documentDetailId;
+    private Integer documentId;
+    private Integer medicineId;
+    private Integer storeHouseId;
+    private Double number;
+    private Double price;
+    private Double money;
+    private Integer companyId;
+
+    public P_DocumentDetail() {
+    }
+
+    @Id
+    @GeneratedValue(strategy = GenerationType.AUTO)
+    @Column(name = "P_DDID", columnDefinition = "INTEGER")
+    public Integer getDocumentDetailId() {
+        return documentDetailId;
+    }
+
+    public void setDocumentDetailId(Integer documentDetailId) {
+        this.documentDetailId = documentDetailId;
+    }
+
+    @Column(name = "P_DID", columnDefinition = "INTEGER not null")
+    public Integer getDocumentId() {
+        return documentId;
+    }
+
+    public void setDocumentId(Integer documentId) {
+        this.documentId = documentId;
+    }
+
+    @Column(name = "d_miID", columnDefinition = "INTEGER not null")
+    public Integer getMedicineId() {
+        return medicineId;
+    }
+
+    public void setMedicineId(Integer medicineId) {
+        this.medicineId = medicineId;
+    }
+
+    @Column(name = "O_IID", columnDefinition = "INTEGER not null")
+    public Integer getStoreHouseId() {
+        return storeHouseId;
+    }
+
+    public void setStoreHouseId(Integer storeHouseId) {
+        this.storeHouseId = storeHouseId;
+    }
+
+    @Column(name = "P_DDNumber", columnDefinition = "double(8,4) not null")
+    public Double getNumber() {
+        return number;
+    }
+
+    public void setNumber(Double number) {
+        this.number = number;
+    }
+
+    @Column(name = "P_DDPrice", columnDefinition = "double(12,6) not null")
+    public Double getPrice() {
+        return price;
+    }
+
+    public void setPrice(Double price) {
+        this.price = price;
+    }
+
+    @Column(name = "P_DDMoney", columnDefinition = "double(10,2) not null")
+    public Double getMoney() {
+        return money;
+    }
+
+    public void setMoney(Double money) {
+        this.money = money;
+    }
+
+    @Column(name = "O_CID", columnDefinition = "INTEGER not null")
+    public Integer getCompanyId() {
+        return companyId;
+    }
+
+    public void setCompanyId(Integer companyId) {
+        this.companyId = companyId;
+    }
+
+    @Override
+    public String toString() {
+        return "P_DocumentDetail{" +
+                "documentDetailId=" + documentDetailId +
+                ", documentId=" + documentId +
+                ", medicineId=" + medicineId +
+                ", storeHouseId=" + storeHouseId +
+                ", number=" + number +
+                ", price=" + price +
+                ", money=" + money +
+                ", companyId=" + companyId +
+                '}';
+    }
+}

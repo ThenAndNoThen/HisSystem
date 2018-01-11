@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<qualifiedTypeNameHistroy>
+<fullyQualifiedTypeName name="javax.swing.JButton"/>
+<fullyQualifiedTypeName name="javax.swing.border.Border"/>
+<fullyQualifiedTypeName name="java.awt.FlowLayout"/>
+<fullyQualifiedTypeName name="bean.BillDetail"/>
+<fullyQualifiedTypeName name="view.MainView"/>
+<fullyQualifiedTypeName name="model.RemoteModel"/>
+<fullyQualifiedTypeName name="model.ModelFactory"/>
+<fullyQualifiedTypeName name="presenter.DataReceivedCallBack"/>
+<fullyQualifiedTypeName name="bean.Bill"/>
+<fullyQualifiedTypeName name="model.modelImpl.RequestBody"/>
+<fullyQualifiedTypeName name="model.modelImpl.MinaClientHandler"/>
+<fullyQualifiedTypeName name="model.modelImpl.ResponseBody"/>
+<fullyQualifiedTypeName name="model.modelImpl.MinaClient"/>
+<fullyQualifiedTypeName name="model.MainModel"/>
+<fullyQualifiedTypeName name="org.apache.mina.core.service.IoHandler"/>
+<fullyQualifiedTypeName name="org.apache.mina.core.service.IoHandlerAdapter"/>
+<fullyQualifiedTypeName name="javax.swing.table.TableModel"/>
+<fullyQualifiedTypeName name="presenter.MainPresenter"/>
+<fullyQualifiedTypeName name="org.apache.log4j.Logger"/>
+<fullyQualifiedTypeName name="javax.swing.table.TableColumn"/>
+<fullyQualifiedTypeName name="java.io.Serializable"/>
+<fullyQualifiedTypeName name="dto.BillDTO"/>
+<fullyQualifiedTypeName name="dto.BillDetailDTO"/>
+<fullyQualifiedTypeName name="dto.DocumentDTO"/>
+<fullyQualifiedTypeName name="javax.swing.table.DefaultTableModel"/>
+<fullyQualifiedTypeName name="model.modelImpl.enums.Actions"/>
+<fullyQualifiedTypeName name="dto.UnitPriceDTO"/>
+<fullyQualifiedTypeName name="javax.swing.JOptionPane"/>
+<fullyQualifiedTypeName name="model.modelImpl.MainModelImpl"/>
+<fullyQualifiedTypeName name="com.alibaba.fastjson.JSONObject"/>
+<fullyQualifiedTypeName name="java.util.List"/>
+<fullyQualifiedTypeName name="dto.DocumentDetailDTO"/>
+<fullyQualifiedTypeName name="java.util.LinkedList"/>
+</qualifiedTypeNameHistroy>

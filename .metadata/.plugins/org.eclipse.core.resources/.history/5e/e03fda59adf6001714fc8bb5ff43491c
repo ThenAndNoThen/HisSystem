@@ -1,0 +1,20 @@
+package dto;
+
+public class UnitPriceDTO {
+	String unitName;
+	double unitPrice;
+	
+	public String getUnitName() {
+		return unitName;
+	}
+	public void setUnitName(String unitName) {
+		this.unitName = unitName;
+	}
+	public double getUnitPrice() {
+		return unitPrice;
+	}
+	public void setUnitPrice(double unitPrice) {
+		this.unitPrice = unitPrice;
+	}
+	
+}

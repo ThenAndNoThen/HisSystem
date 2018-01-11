@@ -1,0 +1,27 @@
+1515483124082	Delete element
+1515483743699	Rename package 'Model'
+1515483753410	Rename package 'Presenter'
+1515483771737	Rename package 'View'
+1515483899055	Move compilation unit
+1515485621193	Copy package
+1515485625715	Delete element
+1515486284059	Move compilation unit
+1515487077151	Rename type 'RemoteModel'
+1515487252436	Rename type 'dataReceivedCallBack'
+1515491889599	Rename type 'MainPresenter'
+1515491910529	Move compilation unit
+1515492029687	Rename type 'MainPresenterImpl'
+1515492034115	Move compilation unit
+1515492037532	Delete element
+1515632433466	Delete element
+1515632965342	Delete element
+1515632973506	Move compilation unit
+1515639312997	Rename type 'DataReceivedCallBack'
+1515639622239	Delete element
+1515639852091	Move file
+1515652342288	Rename type 'Bill'
+1515653345908	Rename package 'bean'
+1515653513958	Rename type 'BillDetail'
+1515661463010	Rename type 'P_Document'
+1515661899173	Rename type 'P_DocumentDetail'
+1515662650852	Delete element

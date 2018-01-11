@@ -1,0 +1,66 @@
+package model.modelImpl;
+
+import java.net.InetSocketAddress;
+
+import org.apache.log4j.Logger;
+import org.apache.mina.core.future.ConnectFuture;
+import org.apache.mina.core.service.IoHandler;
+import org.apache.mina.core.service.IoHandlerAdapter;
+import org.apache.mina.core.session.IdleStatus;
+import org.apache.mina.core.session.IoSession;
+import org.apache.mina.filter.codec.ProtocolCodecFilter;
+import org.apache.mina.filter.codec.serialization.ObjectSerializationCodecFactory;
+
+import com.alibaba.fastjson.JSON;
+
+import bean.Bill;
+import model.MainModel;
+import presenter.MainPresenterCallBack;
+
+public class MainModelImpl extends IoHandlerAdapter implements MainModel   {
+	private static Logger logger = Logger.getLogger(MainModelImpl.class);
+	MainPresenterCallBack dataReceivedCallBack;
+	public MainModelImpl() {
+		MinaClient.setHandler(this);
+		MinaClient.startConnection();
+	}
+
+	@Override
+	public void setDataCallBack(MainPresenterCallBack dataReceivedCallBack) {
+		// TODO Auto-generated method stub
+		this.dataReceivedCallBack = dataReceivedCallBack;
+	}
+
+	@Override
+	public void getUnitPrice(String unitName) {
+		// TODO Auto-generated method stub
+	}
+
+	@Override
+	public void saveBillInfo(Bill bill) {
+		// TODO Auto-generated method stub
+		
+	}
+	
+	@Override
+    public void messageReceived(IoSession session, Object message)
+            throws Exception {
+        String msg = message.toString();
+        System.out.println("客户端接收到数据:" + msg);
+        ResponseBody responseBody = JSON.parseObject(message.toString(), ResponseBody.class);
+        logger.info("客户端收到消息raw："+msg + ", 解析后：" +responseBody);
+        switch(responseBody.getAction()) {
+        	case GET_UNIT_PRICE:
+        		break;
+        	case SAVE_BILLINFO:
+        		break;
+        }
+    }
+
+    @Override
+    public void exceptionCaught(IoSession session, Throwable cause)
+            throws Exception {
+        logger.error("发生错误...", cause);
+    }
+	
+}

@@ -1,0 +1,11 @@
+package model;
+
+import bean.Bill;
+import presenter.DataReceivedCallBack;
+
+public interface MainModel {
+	void setDataCallBack(DataReceivedCallBack dataReceivedCallBack);
+	void getUnitPrice(String unitName);
+	void saveBillInfo(Bill bill);
+	
+}

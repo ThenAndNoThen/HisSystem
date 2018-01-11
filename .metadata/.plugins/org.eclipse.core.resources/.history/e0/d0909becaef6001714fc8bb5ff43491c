@@ -1,0 +1,36 @@
+package dto;
+
+
+
+import java.io.Serializable;
+
+
+public class P_DocumentDetail implements Serializable {
+//    private Integer documentDetailId;
+//    private Integer documentId;
+//    private Integer medicineId;
+//    private Integer storeHouseId;
+    private Double number;
+    private Double price;
+    private Double money;
+    private Integer companyId;
+
+    public P_DocumentDetail() {
+    }
+
+    
+    
+//    @Override
+//    public String toString() {
+//        return "P_DocumentDetail{" +
+//                "documentDetailId=" + documentDetailId +
+//                ", documentId=" + documentId +
+//                ", medicineId=" + medicineId +
+//                ", storeHouseId=" + storeHouseId +
+//                ", number=" + number +
+//                ", price=" + price +
+//                ", money=" + money +
+//                ", companyId=" + companyId +
+//                '}';
+//    }
+}

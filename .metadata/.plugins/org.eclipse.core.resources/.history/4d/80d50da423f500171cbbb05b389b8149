@@ -1,0 +1,12 @@
+package view;
+
+import bean.BillDetail;
+
+public interface MainView {
+	/**更新单据药品单价信息
+	 * @param unitPrice 药品单价
+	 * @param unitName 药品名称
+	 */
+	void updateUnitPrice(double unitPrice,String unitName);
+	void addBill(BillDetail billDetail);
+}

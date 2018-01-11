@@ -1,0 +1,31 @@
+package presenter;
+
+import model.MainModel;
+import model.ModelFactory;
+import presenter.DataReceivedCallBack;
+import view.MainView;
+
+public class MainPresenterImpl implements DataReceivedCallBack {
+	MainView mainView;
+	MainModel mainModel;
+	
+	public MainPresenterImpl(MainView mainView) {
+		this.mainView = mainView;
+		this.mainModel = ModelFactory.createMainModel();
+		mainModel.setDataCallBack(this);
+	}
+
+
+	@Override
+	public void messageFailed(String failInfo) {
+		// TODO Auto-generated method stub
+		
+	}
+
+
+	@Override
+	public void unitPriceRecived(double unitPrice, String unitName) {
+		// TODO Auto-generated method stub
+		
+	}
+}

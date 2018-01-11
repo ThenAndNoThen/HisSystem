@@ -1,0 +1,8 @@
+package view;
+
+import bean.BillDetail;
+
+public interface MainView {
+	void updateUnitPrice(double unitPrice,String unitName);//更新单据药品单价信息
+	void addBill(BillDetail billDetail);//添加一条单据详情到单据信息
+}

@@ -1,0 +1,27 @@
+package model.modelImpl.enums;
+
+/**
+ * 这里定义各种错误以及对应的描述
+ */
+public enum ResultEnum {
+    SUCCESS(0, "成功"),
+    INVALID_PARAMS(1001, "参数错误"),
+    ADD_COMPANY_ERROR(1002, "添加公司操作数据库失败"); //demo
+
+    private Integer code;
+
+    private String msg;
+
+    ResultEnum(Integer code, String msg) {
+        this.code = code;
+        this.msg = msg;
+    }
+
+    public Integer getCode() {
+        return code;
+    }
+
+    public String getMsg() {
+        return msg;
+    }
+}
