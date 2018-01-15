@@ -5,6 +5,8 @@ import java.awt.Font;
 import java.awt.GridLayout;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.awt.event.KeyEvent;
+import java.awt.event.KeyListener;
 import java.util.LinkedList;
 import java.util.List;
 
@@ -31,6 +33,7 @@ import javax.swing.table.TableColumn;
 import javax.swing.table.TableModel;
 
 import org.apache.log4j.Logger;
+import org.apache.log4j.PropertyConfigurator;
 
 import dto.BillDTO;
 import dto.DocumentDTO;
@@ -44,7 +47,7 @@ import java.awt.Color;
 import java.awt.Container;
 import java.awt.Dimension;
 
-public class MainWindow implements ActionListener, TableModelListener ,MainView{
+public class MainWindow implements ActionListener, TableModelListener ,MainView, KeyListener{
 	private static Logger logger = Logger.getLogger(MainWindow.class);
 	private MainPresenter mainPresenter;
 	
@@ -87,6 +90,12 @@ public class MainWindow implements ActionListener, TableModelListener ,MainView{
 	public MainWindow() {
 		initialize();
 		mainPresenter = new MainPresenter(this);
+		try {
+		String logConfigPath = "log4j.properties";
+		PropertyConfigurator.configure(logConfigPath);
+		}catch(Exception e) {
+			e.printStackTrace();
+		}
 	}
 
 	private void billPanelInitialize() {
@@ -236,6 +245,7 @@ public class MainWindow implements ActionListener, TableModelListener ,MainView{
 		addButton.addActionListener(this);
 		billAddButton.addActionListener(this);
 		saveButton.addActionListener(this);
+		this.textField.addKeyListener(this);
 		
 		//其他操作
 		setAllChildrenEnable(frame.getContentPane(),false);
@@ -280,6 +290,7 @@ public class MainWindow implements ActionListener, TableModelListener ,MainView{
 				docdel.setPrice(Double.valueOf(tableModel.getValueAt(i, 1).toString()));
 				docdel.setNumber(Double.valueOf(tableModel.getValueAt(i, 2).toString()));
 				docdel.setMoney(Double.valueOf(tableModel.getValueAt(i, 3).toString()));
+				docdel.setComplyName(this.textField.getText());
 				list.add(docdel);
 			}
 			this.mainPresenter.addDocumentDetail(list, this.departmentJTextField.getText(), this.DoctorJTextField.getText());
@@ -317,8 +328,8 @@ public class MainWindow implements ActionListener, TableModelListener ,MainView{
 			String tmpName = tableModel.getValueAt(i, 0).toString();
 			if(unitPrice.getUnitName().equals(tmpName)) {
 				tableModel.setValueAt(unitPrice.getUnitPrice(), i, 1);
+				break;
 			}
-			break;
 		}
 	}
 
@@ -336,5 +347,43 @@ public class MainWindow implements ActionListener, TableModelListener ,MainView{
 		JOptionPane.showMessageDialog(null, "提示信息", msg,JOptionPane.INFORMATION_MESSAGE);
 		 
 	}
+	
+	@Override
+	public void actionFailed(String msg) {
+		// TODO Auto-generated method stub
+		JOptionPane.showMessageDialog(null, "提示信息", msg,JOptionPane.ERROR_MESSAGE);
+	}
+	
+
+	@Override
+	public void keyTyped(KeyEvent e) {
+		// TODO Auto-generated method stub
+		
+		
+	}
+
+	@Override
+	public void keyPressed(KeyEvent e) {
+		// TODO Auto-generated method stub
+		
+	}
+
+	@Override
+	public void keyReleased(KeyEvent e) {
+		// TODO Auto-generated method stub
+		Object oj = e.getSource();
+		if(oj == this.textField) {
+			if(e.getKeyChar() == '\n') {
+				DefaultTableModel df = (DefaultTableModel)table_A.getModel();
+				int count = df.getRowCount();
+				for(int i=0;i<count;i++) {
+					df.removeRow(0);
+				}
+				df.addRow(new Object[4]);
+			}
+		}
+	}
+
+	
 
 }

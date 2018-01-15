@@ -14,7 +14,7 @@ public class DocumentDetailDTO implements Serializable {
     private Double price;
     private Double money;
 //    private Integer companyId;
-    private String departMentName;
+    private String complyName;
     private String medicineName;
 
     public DocumentDetailDTO() {
@@ -44,12 +44,12 @@ public class DocumentDetailDTO implements Serializable {
 		this.money = money;
 	}
 
-	public String getDepartMentName() {
-		return departMentName;
+	public String getComplyName() {
+		return complyName;
 	}
 
-	public void setDepartMentName(String departMentName) {
-		this.departMentName = departMentName;
+	public void setComplyName(String complyName) {
+		this.complyName = complyName;
 	}
 
 	public String getMedicineName() {
@@ -59,6 +59,8 @@ public class DocumentDetailDTO implements Serializable {
 	public void setMedicineName(String medicineName) {
 		this.medicineName = medicineName;
 	}
+
+	
 
     
     

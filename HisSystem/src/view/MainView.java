@@ -20,4 +20,9 @@ public interface MainView {
 	 * 
 	 */
 	void actionSuccessed(String msg);
+	
+	/**操作失败提示
+	 * @param msg
+	 */
+	void actionFailed(String msg);
 }

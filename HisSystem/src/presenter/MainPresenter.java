@@ -40,7 +40,7 @@ public class MainPresenter implements MainPresenterCallBack {
 		DocumentDTO doc = new DocumentDTO();
 		doc.setDoctorDepartmentName(depName);
 		doc.setDoctorName(docName);
-		doc.setComplyName(docDeailList.get(0).getDepartMentName());
+		doc.setComplyName(docDeailList.get(0).getComplyName());
 		double money = 0;
 		for(DocumentDetailDTO docDtl : docDeailList) {
 			money += docDtl.getMoney();
@@ -53,6 +53,7 @@ public class MainPresenter implements MainPresenterCallBack {
 	@Override
 	public void messageFailed(String failInfo) {
 		// TODO Auto-generated method stub
+		mainView.actionFailed(failInfo);
 		
 	}
 

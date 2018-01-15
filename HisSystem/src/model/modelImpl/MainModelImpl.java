@@ -21,7 +21,7 @@ import model.modelImpl.enums.Actions;
 import presenter.MainPresenterCallBack;
 
 public class MainModelImpl extends IoHandlerAdapter implements MainModel   {
-	private static Logger logger = Logger.getLogger(IoHandlerAdapter.class);
+	private static Logger logger = Logger.getLogger(MainModelImpl.class);
 	MainPresenterCallBack dataReceivedCallBack;
 	public MainModelImpl() {
 		MinaClient.setHandler(this);
@@ -56,9 +56,13 @@ public class MainModelImpl extends IoHandlerAdapter implements MainModel   {
     public void messageReceived(IoSession session, Object message)
             throws Exception {
         String msg = message.toString();
-        System.out.println("客户端接收到数据:" + msg);
+        logger.info("客户端接收到数据:" + msg);
         ResponseBody responseBody = JSON.parseObject(message.toString(), ResponseBody.class);
         logger.info("客户端收到消息raw："+msg + ", 解析后：" +responseBody);
+        if(responseBody.getCode() != 0) {
+        	dataReceivedCallBack.messageFailed(responseBody.getMsg());
+        	return;
+        }
         switch(responseBody.getAction()) {
         	case GET_PRICE:
         		JSONObject js = (JSONObject) responseBody.getData();
